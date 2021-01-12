@@ -40,7 +40,7 @@ function mainApp() {
         let manager = Manager(name, id, email, officeNumber);
 
         // Add manger to the team array
-        teamMemeber.push(manager);
+        teamMember.push(manager);
 
         // Initiating the prompt to ask for more team members
         createTeam();
@@ -81,9 +81,57 @@ function getEngineer() {
         {
             type: "input",
             name: "name",
-            message: "What is the manger's name?"
+            message: "What is the engineer's name?"
         },
-    ])
+        {
+            type: "input",
+            name: "id",
+            message: "What is the engineer's id?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's email?"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the engineer's github?"
+        },
+    ]).then(answers => {
+        let { name, id, email, github } = answers;
+        let engineer = Engineer(name, id, email, github);
+        teamMember.push(engineer);
+    })
+}
+// Function to create Intern
+function getEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the engineer's name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the engineer's id?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's email?"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the engineer's github?"
+        },
+    ]).then(answers => {
+        let { name, id, email, github } = answers;
+        let engineer = Engineer(name, id, email, github);
+        teamMember.push(engineer);
+    })
 }
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
