@@ -10,11 +10,11 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-const teamMember = [];
+const teamMembers = [];
+const emptyID = [];
 
-function mainApp() {
-    // Manager class
-    inquirer.prompt([
+const employeeQuestions= [
+    
         {
             type: "input",
             name: "name",
@@ -35,18 +35,17 @@ function mainApp() {
             name: "officeNumber",
             message: "What is the manger's office number?"
         },
-    ]).then(answers => {
-        let { name, id, email, officeNumber } = answers;
-        let manager = Manager(name, id, email, officeNumber);
-
-        // Add manger to the team array
-        teamMember.push(manager);
-
-        // Initiating the prompt to ask for more team members
+];
+// Manager Function
+function manager() {
+    console.log("Let's build your team!");
+    inquirer.prompt(employeeQuestions).then(function(data){
+        const manager = new Manager(data.name, data.id, data.email, data.officeNumber);
+        teamMembers.push(manager);
+        emptyID.push(data.id);
         createTeam();
     });
 };
-
 // Creating a list to add team members
 function createTeam(){
     inquirer.prompt([
@@ -54,89 +53,84 @@ function createTeam(){
             type: "list",
             name:"command",
             message: "Do you want to include more team members to the list?",
-            choices: ["Add an Engineer", "Add an Intern", "Create the Team"]
+            choices: ["Engineer", "Intern", "Do Not Add Anymore"]
         }
-    ]).then(answers => {
+    ]).then(function(data){
         // Switch statement to choose the choices of selected options
-        statement = answers.command;
-
-        switch(statment){
-            case "Add an Engineer":
-                getEngineer();
-                break;
-            
-            case "Add an Intern":
-                getIntern();
-                break;
-            
-            case "Create the Team":
-                buildTeam();
-                break;
-        }
-    })
+        if (data.command === "Engineer"){
+            engineer();
+        } else if (data.command === "Intern"){
+            intern();
+        } else (outputTeam()); 
+    });
 }
 // Create engineer function
-function getEngineer() {
+function engineer() {
     inquirer.prompt([
         {
             type: "input",
-            name: "name",
+            name: "nameEngineer",
             message: "What is the engineer's name?"
         },
         {
             type: "input",
-            name: "id",
+            name: "idEngineer",
             message: "What is the engineer's id?"
         },
         {
             type: "input",
-            name: "email",
+            name: "emailEngineer",
             message: "What is the engineer's email?"
         },
         {
             type: "input",
-            name: "github",
+            name: "githubEngineer",
             message: "What is the engineer's github?"
         },
-    ]).then(answers => {
-        let { name, id, email, github } = answers;
-        let engineer = Engineer(name, id, email, github);
-        teamMember.push(engineer);
+    ]).then(function(data) {
+        const engineer = new Engineer(data.nameEngineer, data.idEngineer, data.emailEngineer, data.githubEngineer);
+        teamMembers.push(engineer);
+        emptyID.push(data.idEngineer);
+        createTeam();
     });
-}
+};
 // Function to create Intern
-function getIntern() {
+function intern() {
     inquirer.prompt([
         {
             type: "input",
-            name: "name",
+            name: "nameIntern",
             message: "What is the Intern's name?"
         },
         {
             type: "input",
-            name: "id",
+            name: "idIntern",
             message: "What is the Intern's id?"
         },
         {
             type: "input",
-            name: "email",
+            name: "emailIntern",
             message: "What is the Intern's email?"
         },
         {
             type: "input",
-            name: "school",
+            name: "schoolIntern",
             message: "What is the Intern's school name?"
         },
-    ]).then(answers => {
-        let { name, id, email, school } = answers;
-        let intern = Intern(name, id, email, school);
-        teamMember.push(intern);
+    ]).then(function(data) {
+        const intern = new Intern(data.nameIntern, data.idIntern, data.emailIntern, data.schoolIntern);
+        teamMembers.push(intern);
+        emptyID.push(data.idIntern);
+        createTeam();
     });
 }
 
 // Function to build team
-function buildTeam() {
-    fs.writeFileSync(outputPath, render(teamMember), "utf-8");
+function outputTeam() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
 }
 
-mainApp()
+manager()
