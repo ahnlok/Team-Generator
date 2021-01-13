@@ -12,7 +12,7 @@
 ## Guidance
  ![oopguidline](./oop.gif)
 ### Video Link: <https://drive.google.com/file/d/19VugSNKs_Q_QpKKq0Z6WI5jdKXiQhBff/view>
-### The result from the "output" folder, you will see "team.html." It would look like this once you open it on the browser after you complit your input in terminal:
+### In order to see the result, click "output" folder, then click "team.html." The result of your inputs inside the terminal would look like this:
  ![image](./image.jpg)
  
 ---
