@@ -12,19 +12,19 @@
 ## Guidance
  ![oopguidline](./oop.gif)
 ### Video Link: <https://drive.google.com/file/d/19VugSNKs_Q_QpKKq0Z6WI5jdKXiQhBff/view>
-### In order to see the result, click "output" folder, then click "team.html." The result of your inputs inside the terminal would look like this:
+#### In order to see the result, click "output" folder, then click "team.html." The result of your inputs inside the terminal would look like this:
  ![image](./image.jpg)
  
 ---
 ## Contribution:
-##### Be A Contributor!
-- If you would like to contribute to the open source, here is the the link: <https://github.com/ahnlok/Team-Generator>
+#### Be A Contributor!
+#####- If you would like to contribute to the open source, here is the the link: <https://github.com/ahnlok/Team-Generator>
 ---
 ## Credit:
-Sungpil An <ansungpil1@gmail.com>
-##### URL:
-- GitPage: <https://ahnlok.github.io/Team-Generator/>
-- GitHubRepository: <https://github.com/ahnlok/Team-Generator>
+### Sungpil An <ansungpil1@gmail.com>
+### URL:
+#####- GitPage: <https://ahnlok.github.io/Team-Generator/>
+#####- GitHubRepository: <https://github.com/ahnlok/Team-Generator>
 ---
 ## License: 
 © Sungpil An, Georgia Tech Coding Bootcamp
