@@ -18,13 +18,13 @@
 ---
 ## Contribution:
 #### Be A Contributor!
-#####- If you would like to contribute to the open source, here is the the link: <https://github.com/ahnlok/Team-Generator>
+##### If you would like to contribute to the open source, here is the the link: <https://github.com/ahnlok/Team-Generator>
 ---
 ## Credit:
 ### Sungpil An <ansungpil1@gmail.com>
 ### URL:
-#####- GitPage: <https://ahnlok.github.io/Team-Generator/>
-#####- GitHubRepository: <https://github.com/ahnlok/Team-Generator>
+##### GitPage: <https://ahnlok.github.io/Team-Generator/>
+##### GitHubRepository: <https://github.com/ahnlok/Team-Generator>
 ---
 ## License: 
 © Sungpil An, Georgia Tech Coding Bootcamp
