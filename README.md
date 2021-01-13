@@ -3,20 +3,20 @@
 #### Description:
 - This is "Team File Generator" using HTML5, Node.JS, and Object-Oriented Programming(OOP).
 ---
- ## Table of Contents:
+## Table of Contents:
 * [Guidance](#guidance)
 * [Contribution](#contribution)
 * [Credit](#credit)
 * [License](#license)
  ---
- ## Guidance
+## Guidance
  ![oopguidline](./oop.gif)
- ### Video Link: <https://drive.google.com/file/d/19VugSNKs_Q_QpKKq0Z6WI5jdKXiQhBff/view>
- ### The result from "team.html" would look like this:
+### Video Link: <https://drive.google.com/file/d/19VugSNKs_Q_QpKKq0Z6WI5jdKXiQhBff/view>
+### The result from "team.html" would look like this:
  ![image](./image.jpg)
  
 ---
- ## Contribution:
+## Contribution:
 ##### Be A Contributor!
 - If you would like to contribute to the open source, here is the the link: <https://github.com/ahnlok/Team-Generator>
 ---
